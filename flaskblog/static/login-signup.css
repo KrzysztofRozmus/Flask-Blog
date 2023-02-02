@@ -1,0 +1,87 @@
+.login-container {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    max-width: 450px;
+    height: 540px;
+    margin: 65px auto;
+    position: relative;
+    background-color: white;
+}
+
+.login-form {
+    position: relative;
+    padding: 42px;
+}
+
+.form-title {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 100px;
+}
+
+.input label {
+    display: block;
+    color: grey;
+}
+
+.input input {
+    width: 100%;
+}
+
+.email-input,
+.password-input,
+.confirm-password-input {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding: 2px;
+}
+
+.email-label,
+.password-label,
+.confirm-password-label {
+    margin-bottom: 1px;
+}
+
+.email-input {
+    margin-bottom: 25px;
+    padding: 2px;
+}
+
+.password-input {
+    padding: 2px;
+}
+
+.button {
+    width: 100%;
+    display: block;
+    padding: 9px 0 9px 0;
+    font-size: 22px;
+    background-image: linear-gradient(45deg, dodgerblue, purple);
+    border-radius: 15px;
+    border: 0;
+    color: white;
+}
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 7px;
+}
+
+.login-footer {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}

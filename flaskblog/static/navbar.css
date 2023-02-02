@@ -1,0 +1,90 @@
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgb(80, 80, 80);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.navbar-title {
+    margin-left: 170px;
+    font-size: 28px;
+}
+
+.navbar-left-container {
+    flex: 1;
+}
+
+.navbar-center-container {
+    flex: 3;
+    text-align: center;
+}
+
+.navbar-center-container a {
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.navbar-right-container {
+    flex: 1;
+    text-align: end;
+}
+
+.navbar-center-container a:hover {
+    color: dodgerblue;
+    transition: all 0.2s ease 0s;
+}
+
+.login-link {
+    margin-left: 10px;
+    margin-right: 170px;
+    border: 2px solid limegreen
+}
+
+.signup-link {
+    border: 2px solid dodgerblue
+}
+
+.login-link,
+.signup-link {
+    border-radius: 30px;
+    padding: 6px 10px 6px 10px;
+}
+
+.login-link:hover,
+.signup-link:hover {
+    transition: all 0.2s ease 0s;
+}
+
+.login-link:hover {
+    background-color: limegreen;
+    border-color: limegreen;
+    color: white;
+}
+
+.signup-link:hover {
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    color: white;
+}
+
+.flash-msgs-container {
+    z-index: 1;
+    margin-top: 68px;
+    /* background-color: beige; */
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+    <div class="login-container">
+
+        <form class="login-form">
+            <p class="form-title">Login</p>
+
+            <div class="input">
+                <label class="email-label" for="email-input">Email</label>
+                <input class="email-input" type="text">
+
+                <label class="password-label" for="password-input">Password</label>
+                <input class="password-input" type="password">
+
+                <div class="forgot-password">
+                    <small><a href="#">Forgot password?</a></small>
+                </div>                
+            </div>
+
+            <button class="button">Login</button>
+        </form>
+
+        <div class="login-footer">
+            <small>Don't have an account? <a href="#">Signup</a></small>
+        </div>
+
+    </div>
+{% endblock content %}
