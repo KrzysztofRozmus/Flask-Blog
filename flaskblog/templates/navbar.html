@@ -17,5 +17,24 @@
 </nav>
 
 <div class="flash-msgs-container">
-    <!-- <p>Place for flash message</p> -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+    <ul class=flashes>
+        {% for category, message in messages %}
+
+
+
+        <li class="flash-msg-{{ category }}">
+            <span class="flash-msg-close-btn" onclick="this.parentElement.style.display='none';">&times;
+            </span>
+
+            {{ message }}
+        </li>
+
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+    {% endwith %}
 </div>

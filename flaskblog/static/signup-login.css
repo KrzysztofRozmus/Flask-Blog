@@ -1,4 +1,4 @@
-.login-container {
+.container {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     max-width: 450px;
     height: 540px;
@@ -7,57 +7,41 @@
     background-color: white;
 }
 
-.login-form {
+.form {
     position: relative;
-    padding: 42px;
+    padding: 45px;
 }
 
 .form-title {
     font-size: 34px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
-.input {
-    margin-bottom: 100px;
-}
-
-.input label {
-    display: block;
-    color: grey;
-}
-
-.input input {
+.signup-field,
+.login-field {
     width: 100%;
+    font-size: 18px;
+    padding: 4px;
 }
 
-.email-input,
-.password-input,
-.confirm-password-input {
-    font-size: 22px;
+.signup-field {
+    margin-bottom: 12px;
+}
+
+.login-field {
     margin-bottom: 20px;
-    padding: 2px;
 }
 
-.email-label,
-.password-label,
-.confirm-password-label {
-    margin-bottom: 1px;
+.form-label {
+    color: grey;
+    font-size: 15px;
 }
 
-.email-input {
-    margin-bottom: 25px;
-    padding: 2px;
-}
-
-.password-input {
-    padding: 2px;
-}
-
-.button {
+.signup-button,
+.login-button {
     width: 100%;
-    display: block;
     padding: 9px 0 9px 0;
     font-size: 22px;
     background-image: linear-gradient(45deg, dodgerblue, purple);
@@ -65,17 +49,28 @@
     border: 0;
     color: white;
 }
-.button:hover {
+
+.signup-button {
+    margin-top: 30px;
+}
+
+.login-button {
+    margin-top: 100px;
+}
+
+.signup-button:hover,
+.login-button:hover {
     cursor: pointer;
 }
 
-.button:active {
+.signup-button:active,
+.login-button:active  {
     transform: translateY(2px);
 }
 
 .forgot-password {
     text-align: right;
-    margin-top: 7px;
+    margin-top: 2px;
 }
 
 .login-footer {
@@ -84,4 +79,11 @@
     left: 0;
     right: 0;
     text-align: center;
+}
+
+.form-errors {
+    list-style-type: none;
+    color: red;
+    font-size: 13px;
+    margin-top: -10px;
 }

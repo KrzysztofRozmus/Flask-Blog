@@ -79,12 +79,55 @@ nav a {
     color: white;
 }
 
+
+/* -------------------- Flash messages -------------------- */
+
 .flash-msgs-container {
-    z-index: 1;
-    margin-top: 68px;
-    /* background-color: beige; */
-    height: 35px;
+    margin-top: 65px;
+    height: 45px;
+}
+
+.flash-msg-success,
+.flash-msg-danger,
+.flash-msg-info {
+    border-radius: 5px;
+    padding: 12px;
+    list-style: none;
+    width: 70%;
+    margin: auto;
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.flash-msg-success {
+    color: rgb(24, 109, 41);
+    border-left: 5px solid green;
+    background-color: rgb(185, 224, 189);
+}
+
+
+.flash-msg-danger {
+    color: rgb(180, 53, 53);
+    border-left: 5px solid red;
+    background-color: rgb(238, 201, 201);
+}
+
+.flash-msg-info {
+    color: rgb(22, 106, 145);
+    border-left: 5px solid rgb(5, 165, 240);
+    background-color: rgb(189, 222, 238);
+}
+
+.flash-msg-close-btn {
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    float: right;
+    line-height: 45px;
+    transition: 0.3s;
+    margin: 0px 8px 0px 0px;
+    position: absolute;
+    right: 0;
+    bottom: 1px;
 }

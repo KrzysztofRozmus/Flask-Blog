@@ -1,30 +1,30 @@
 {% extends "index.html" %}
+{% from "_formhelpers.html" import render_field %}
 
 
 {% block content %}
-    <div class="login-container">
+<div class="container">
 
-        <form class="login-form">
-            <p class="form-title">Login</p>
+    <form class="form" method=post>
+        {{ form.hidden_tag() }}
 
-            <div class="input">
-                <label class="email-label" for="email-input">Email</label>
-                <input class="email-input" type="text">
+        <p class="form-title">Login</p>
 
-                <label class="password-label" for="password-input">Password</label>
-                <input class="password-input" type="password">
+        <div>
+            {{ render_field(form.email, class="login-field") }}
+            {{ render_field(form.password, class="login-field") }}
 
-                <div class="forgot-password">
-                    <small><a href="#">Forgot password?</a></small>
-                </div>                
+            <div class="forgot-password">
+                <small><a href="#">Forgot password?</a></small>
             </div>
-
-            <button class="button">Login</button>
-        </form>
-
-        <div class="login-footer">
-            <small>Don't have an account? <a href="#">Signup</a></small>
         </div>
 
+        {{ form.submit(class="login-button") }}
+    </form>
+
+    <div class="login-footer">
+        <small>Don't have an account? <a href="{{ url_for('signup') }}">Signup</a></small>
     </div>
+
+</div>
 {% endblock content %}

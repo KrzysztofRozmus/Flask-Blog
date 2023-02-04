@@ -1,39 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "index.html" %}
+{% from "_formhelpers.html" import render_field %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signup.css">
-    <title>Login</title>
-</head>
 
-<body>
-    <div class="login-container">
-        <form class="login-form">
-            <p class="form-title">Signup</p>
+{% block content %}
+<div class="container">
 
-            <div class="input">
-                <label class="email-label" for="email-input">Email</label>
-                <input class="email-input" type="text">
+    <form class="form" method=post>
+        {{ form.hidden_tag() }}
 
-                <label class="password-label" for="password-input">Password</label>
-                <input class="password-input" type="password">
+        <p class="form-title">Signup</p>
 
-                <label class="confirm-password-label" for="confirm-password-input">
-                    Confirm password
-                </label>
-                <input class="confirm-password-input" type="password">
-
-            </div>
-            <button class="button">Signup</button>
-        </form>
-
-        <div class="login-footer">
-            <small>Already have an account? <a href="#">Login</a></small>
+        <div>
+            {{ render_field(form.username, class="signup-field") }}
+            {{ render_field(form.email, class="signup-field") }}
+            {{ render_field(form.password, class="signup-field") }}
+            {{ render_field(form.confirm_password, class="signup-field") }}
         </div>
-    </div>
-</body>
 
-</html>
+        {{ form.submit(class="signup-button") }}
+    </form>
+
+    <div class="login-footer">
+        <small>Already have an account? <a href="{{ url_for('login') }}">Login</a></small>
+    </div>
+
+</div>
+{% endblock content %}
