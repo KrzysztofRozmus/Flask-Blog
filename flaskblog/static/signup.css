@@ -12,35 +12,26 @@
     padding: 45px;
 }
 
-.form-title {
+.form-signup-title {
     font-size: 34px;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     text-align: center;
 }
 
-.signup-field,
-.login-field {
+.signup-field {
     width: 100%;
     font-size: 18px;
-    padding: 4px;
-}
-
-.signup-field {
-    margin-bottom: 12px;
-}
-
-.login-field {
-    margin-bottom: 20px;
+    padding: 5px;
 }
 
 .form-label {
     color: grey;
     font-size: 15px;
+    margin-top: 13px;
 }
 
-.signup-button,
-.login-button {
+.signup-button {
     width: 100%;
     padding: 9px 0 9px 0;
     font-size: 22px;
@@ -54,17 +45,11 @@
     margin-top: 30px;
 }
 
-.login-button {
-    margin-top: 100px;
-}
-
-.signup-button:hover,
-.login-button:hover {
+.signup-button:hover {
     cursor: pointer;
 }
 
-.signup-button:active,
-.login-button:active  {
+.signup-button:active {
     transform: translateY(2px);
 }
 
@@ -73,17 +58,9 @@
     margin-top: 2px;
 }
 
-.login-footer {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-
 .form-errors {
     list-style-type: none;
     color: red;
-    font-size: 13px;
-    margin-top: -10px;
+    font-size: 12px;
+    margin-top: 1px;
 }

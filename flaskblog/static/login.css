@@ -1,0 +1,70 @@
+.container {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    max-width: 450px;
+    height: 540px;
+    margin: 65px auto;
+    position: relative;
+    background-color: white;
+}
+
+.form {
+    position: relative;
+    padding: 45px;
+}
+
+.form-login-title {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.login-field {
+    width: 100%;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.login-field {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    color: grey;
+    font-size: 15px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 9px 0 9px 0;
+    font-size: 22px;
+    background-image: linear-gradient(45deg, dodgerblue, purple);
+    border-radius: 15px;
+    border: 0;
+    color: white;
+}
+
+.login-button {
+    margin-top: 80px;
+}
+
+.login-button:hover {
+    cursor: pointer;
+}
+
+.login-button:active  {
+    transform: translateY(2px);
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 2px;
+}
+
+.login-footer {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
