@@ -46,24 +46,36 @@ nav a {
     transition: all 0.2s ease 0s;
 }
 
-.login-link {
+.login-link,
+.logout-link {
     margin-left: 10px;
     margin-right: 170px;
     border: 2px solid limegreen
 }
+
+.login-link {
+    border: 2px solid limegreen
+}
+
+.logout-link {
+    border: 2px solid orange
+}
+
 
 .signup-link {
     border: 2px solid dodgerblue
 }
 
 .login-link,
-.signup-link {
+.signup-link,
+.logout-link {
     border-radius: 30px;
     padding: 6px 10px 6px 10px;
 }
 
 .login-link:hover,
-.signup-link:hover {
+.signup-link:hover,
+.logout-link:hover {
     transition: all 0.2s ease 0s;
 }
 
@@ -76,6 +88,12 @@ nav a {
 .signup-link:hover {
     background-color: dodgerblue;
     border-color: dodgerblue;
+    color: white;
+}
+
+.logout-link:hover {
+    background-color: orange;
+    border-color: orange;
     color: white;
 }
 
