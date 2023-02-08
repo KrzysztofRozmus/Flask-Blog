@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default="default.png")
     date_joined = db.Column(db.DateTime, nullable=False, default=datetime.now())
-    posts = db.relationship("Post", backref="user")
+    posts = db.relationship("Post", backref="author", lazy=True)
     
     def __init__(self, username, email, password):
         self.username = username
@@ -18,7 +18,7 @@ class User(db.Model, UserMixin):
         
     def __repr__(self) -> str:
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
-            
+# ---------------------------------------------------------------------------------------------------------------------
     
     
 class Post(db.Model, UserMixin):
@@ -28,10 +28,11 @@ class Post(db.Model, UserMixin):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.now())    
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     
-    def __init__(self, title, content, user_id):
+    def __init__(self, title, content, author):
         self.title = title
         self.content = content
-        self.user_id = user_id
+        self.author = author
     
     def __repr__(self) -> str:
-        return f"User('{self.title}', '{self.content}', '{self.user_id}')"
+        return f"User('{self.title}', '{self.content}', '{self.author}')"
+# ---------------------------------------------------------------------------------------------------------------------

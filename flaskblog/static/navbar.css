@@ -41,7 +41,8 @@ nav a {
     text-align: end;
 }
 
-.navbar-center-container a:hover {
+.navbar-center-container a:hover,
+.dashboard-link:hover {
     color: dodgerblue;
     transition: all 0.2s ease 0s;
 }

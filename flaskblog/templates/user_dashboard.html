@@ -1,7 +1,27 @@
 {% extends "index.html" %}
+{% from "_formhelpers.html" import render_field %}
+
+
+{% if current_user.is_authenticated %}
 
 {% block content %}
 <h1 class="user-dashboard-title">User Dashboard</h1>
+<hr>
+
+{{ current_user.image_file }} <br>
+{{ current_user.id }} <br>
+{{ current_user.username }} <br>
+{{ current_user.email }} <br>
+{{ current_user.password }} <br>
+
+<form class="form" method=post>
+    {{ form.hidden_tag() }}
+    {{ render_field(form.title) }} <br>
+    {{ render_field(form.content) }} <br>
+    {{ form.submit }}
+</form>
 
 
 {% endblock content %}
+
+{% endif %}
