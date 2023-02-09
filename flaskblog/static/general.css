@@ -6,8 +6,63 @@
 
 body {
     background-color: lightgray;
+    margin: 0 250px;
 }
 
 .user-dashboard-title {
-    text-align: center;
+    text-align: center;    
+}
+
+.post-container {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.post-title {
+    font-weight: 700;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.post-title h1 {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.post-content {
+    margin-bottom: 15px;
+}
+
+.post-author-and-date {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    border-top: 1px solid black;
+    padding-top: 5px;
+}
+
+.post-date {
+    font-style: italic;
+}
+
+.form div {
+    margin-top: 20px;
+}
+
+#submit {
+    padding: 8px;
+}
+
+.post-title {
+    height: 30px;
+    width: 700px;
+    font-size: 20px;
+}
+
+.userdashboard-content {
+    height: 250px;
+    width: 700px;
+    font-size: 20px;
 }

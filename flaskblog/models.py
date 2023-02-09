@@ -1,6 +1,6 @@
-from flaskblog import db
-from datetime import datetime
+from flaskblog import db, current_datetime
 from flask_login import UserMixin
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -8,8 +8,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(30), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default="default.png")
-    date_joined = db.Column(db.DateTime, nullable=False, default=datetime.now())
+    date_joined = db.Column(db.DateTime, nullable=False, default=current_datetime)
     posts = db.relationship("Post", backref="author", lazy=True)
+    
     
     def __init__(self, username, email, password):
         self.username = username
@@ -25,8 +26,9 @@ class Post(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60), nullable=False)
     content = db.Column(db.Text, nullable=False)
-    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.now())    
+    date_posted = db.Column(db.DateTime, nullable=False, default=current_datetime)    
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+
     
     def __init__(self, title, content, author):
         self.title = title

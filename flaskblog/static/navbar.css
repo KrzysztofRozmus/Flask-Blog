@@ -18,8 +18,10 @@ nav a {
 }
 
 .navbar-title {
-    margin-left: 170px;
+    margin-left: 250px;
     font-size: 28px;
+    font-weight: 700;
+    font-family: "Purisa", Geneva, Tahoma, sans-serif;
 }
 
 .navbar-left-container {
@@ -27,7 +29,7 @@ nav a {
 }
 
 .navbar-center-container {
-    flex: 3;
+    flex: 2;
     text-align: center;
 }
 
@@ -50,7 +52,7 @@ nav a {
 .login-link,
 .logout-link {
     margin-left: 10px;
-    margin-right: 170px;
+    margin-right: 250px;
     border: 2px solid limegreen
 }
 

@@ -1,0 +1,22 @@
+.user-info-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.profile-picture {
+    width: 180px;
+    margin-right: 20px;
+    border-radius: 90px;
+}
+
+.user-info {
+    font-size: 20px;
+    line-height: 38px;
+    display: flex;
+}
+
+.user-titles p {
+    margin-right: 25px;
+    font-weight: 700;
+}

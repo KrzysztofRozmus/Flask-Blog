@@ -11,12 +11,11 @@ def load_user(email):
     return User.query.get(email)
 
 
-
 @app.route("/")
 @app.route("/home")
-def home():
-    return render_template("index.html")
-
+def home():    
+    posts = Post.query.all()    
+    return render_template("index.html", posts=posts)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -68,21 +67,21 @@ def login():
 @app.route("/user_dashboard", methods=["GET", "POST"])
 @login_required
 def user_dashboard():
-    form = PostForm()  
+    form = PostForm()
           
-    if current_user.is_authenticated and form.validate_on_submit():
+    if form.validate_on_submit():
+        
         post = Post(title=form.title.data,
                     content=form.content.data,
-                    author=current_user)                        
+                    author=current_user)
+                              
         db.session.add(post)
-        print(post)
-        db.session.commit()           
+        db.session.commit()
         flash("The post was published", "info")
-        return redirect(url_for("user_dashboard"))
-    else:   
-        return render_template("user_dashboard.html", form=form)        
-
-
+        return redirect(url_for("home"))
+    else:
+        image_file = url_for("static", filename="pictures/default_pic.png")
+        return render_template("user_dashboard.html", form=form, image_file=image_file)
 
 
 @app.route("/logout")

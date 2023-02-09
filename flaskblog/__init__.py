@@ -1,4 +1,5 @@
 from flask import Flask
+from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -16,6 +17,9 @@ bcrypt = Bcrypt(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+my_datetime = datetime.now()
+current_datetime = my_datetime.replace(microsecond = 0)
 
 
 # If user is not logged in and want to access page with login_required decorator,

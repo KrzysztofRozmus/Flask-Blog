@@ -7,18 +7,29 @@
 {% block content %}
 <h1 class="user-dashboard-title">User Dashboard</h1>
 <hr>
+<div class="user-info-container">
+    <img class="profile-picture" src="{{ image_file }}" alt="">
+    <div class="user-info">
+        <div class="user-titles">
+            <p>Username:</p>
+            <p>Email:</p>
+            <p>Date joined:</p>
+            <p>Post count:</p>
 
-{{ current_user.image_file }} <br>
-{{ current_user.id }} <br>
-{{ current_user.username }} <br>
-{{ current_user.email }} <br>
-{{ current_user.password }} <br>
+        </div>
+        <div>
+            <p>{{ current_user.username }}</p>
+            <p>{{ current_user.email }}</p>
+            <p>{{ current_user.date_joined }}</p>
+        </div>
+    </div>
+</div>
 
 <form class="form" method=post>
     {{ form.hidden_tag() }}
-    {{ render_field(form.title) }} <br>
-    {{ render_field(form.content) }} <br>
-    {{ form.submit }}
+    {{ render_field(form.title, class="post-title") }}
+    {{ render_field(form.content, class="userdashboard-content") }}
+    <div>{{ form.submit }}</div>
 </form>
 
 
