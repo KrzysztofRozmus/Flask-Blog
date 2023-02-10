@@ -6,63 +6,57 @@
 
 body {
     background-color: lightgray;
-    margin: 0 250px;
+    margin: 0 350px;
 }
 
-.user-dashboard-title {
-    text-align: center;    
-}
 
+
+/* ----------------------------- Posts on Home Page ----------------------------- */
 .post-container {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);  
     background-color: white;
     margin-bottom: 30px;
     padding: 10px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    height: 200px;  
 }
 
 .post-title {
     font-weight: 700;
-    align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 9px;
 }
 
 .post-title h1 {
     font-size: 25px;
-    margin-right: 15px;
+    padding: 0;
 }
 
 .post-content {
     margin-bottom: 15px;
+    overflow: scroll;
+    height: 115px;
 }
 
 .post-author-and-date {
-    display: flex;
-    justify-content: space-between;
     font-size: 15px;
     border-top: 1px solid black;
-    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 3px;
+    margin-bottom: 15px;
 }
 
 .post-date {
     font-style: italic;
+    float: right;
 }
 
 .form div {
     margin-top: 20px;
 }
 
-#submit {
-    padding: 8px;
-}
-
 .post-title {
     height: 30px;
-    width: 700px;
-    font-size: 20px;
-}
-
-.userdashboard-content {
-    height: 250px;
     width: 700px;
     font-size: 20px;
 }

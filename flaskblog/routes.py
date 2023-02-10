@@ -13,9 +13,10 @@ def load_user(email):
 
 @app.route("/")
 @app.route("/home")
-def home():    
+def home():
+    image_file = url_for("static", filename="pictures/default_pic.png")
     posts = Post.query.all()    
-    return render_template("index.html", posts=posts)
+    return render_template("index.html", posts=posts, image_file=image_file)
 
 
 @app.route("/signup", methods=["GET", "POST"])

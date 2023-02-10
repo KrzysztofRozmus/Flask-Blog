@@ -1,3 +1,8 @@
+.user-dashboard-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .user-info-container {
     display: flex;
     align-items: center;
@@ -19,4 +24,46 @@
 .user-titles p {
     margin-right: 25px;
     font-weight: 700;
+}
+
+.user-utilities {
+    border: 1px solid black;
+    display: flex;
+    height: 470px;
+    margin-top: 30px;
+}
+
+.post-form {
+    width: 50%;
+}
+.post-form div {
+    text-align: center;
+}
+.post-form p  {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.maintenance {
+    background-color: lightpink;
+    width: 50%;
+}
+
+.input-post-title,
+.input-post-content {
+    width: 98%;
+    font-size: 18px;
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-post-content {
+    height: 280px;
+}
+
+.post-button {
+    margin-top: 18px;
+    font-size: 15px;
+    padding: 5px;
 }

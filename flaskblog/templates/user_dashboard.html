@@ -10,13 +10,14 @@
 <div class="user-info-container">
     <img class="profile-picture" src="{{ image_file }}" alt="">
     <div class="user-info">
+
         <div class="user-titles">
             <p>Username:</p>
             <p>Email:</p>
             <p>Date joined:</p>
             <p>Post count:</p>
-
         </div>
+
         <div>
             <p>{{ current_user.username }}</p>
             <p>{{ current_user.email }}</p>
@@ -25,12 +26,32 @@
     </div>
 </div>
 
-<form class="form" method=post>
-    {{ form.hidden_tag() }}
-    {{ render_field(form.title, class="post-title") }}
-    {{ render_field(form.content, class="userdashboard-content") }}
-    <div>{{ form.submit }}</div>
-</form>
+<div class="user-utilities">
+    <div class="post-form">
+        <p>New post</p>
+        <form method=post action="">
+            {{ form.hidden_tag() }}
+            {{ render_field(form.title, class="input-post-title") }}
+            {{ render_field(form.content, class="input-post-content") }}
+            <div>{{ form.submit(class="post-button") }}</div>
+        </form>
+    </div>
+    <div class="maintenance">
+        <button>Delete
+            <a href=""></a>
+        </button>
+
+        <button>Update
+            <a href=""></a>
+        </button>
+
+        <button>Update
+            <a href=""></a>
+        </button>
+    </div>
+</div>
+
+
 
 
 {% endblock content %}
