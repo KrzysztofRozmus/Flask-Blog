@@ -1,8 +1,8 @@
 from flaskblog import app, db, bcrypt, login_manager
-from flaskblog.forms import SignupForm, LoginForm, PostForm
+from flaskblog.forms import SignupForm, LoginForm, PostForm, ProfilePic, ChangePasswordForm
 from flaskblog.models import User, Post
 from datetime import timedelta
-from flask import render_template, redirect, url_for, flash
+from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_user, login_required, logout_user, login_fresh, current_user
 
 
@@ -69,6 +69,7 @@ def login():
 @login_required
 def user_dashboard():
     form = PostForm()
+    pic_form = ProfilePic()
           
     if form.validate_on_submit():
         
@@ -82,7 +83,10 @@ def user_dashboard():
         return redirect(url_for("home"))
     else:
         image_file = url_for("static", filename="pictures/default_pic.png")
-        return render_template("user_dashboard.html", form=form, image_file=image_file)
+        return render_template("user_dashboard.html",
+                               form=form,
+                               image_file=image_file,
+                               pic_form=pic_form)
 
 
 @app.route("/logout")
@@ -91,3 +95,43 @@ def logout():
     logout_user()
     flash("You have been log out", "success")
     return redirect(url_for("login"))
+
+
+
+@app.route("/delete_account/<email>")
+@login_required
+def delete_account(email):  
+    
+    if email == current_user.email:
+              
+        delete_query = User.query.filter_by(email=email).first()
+        db.session.delete(delete_query)
+        db.session.commit()        
+        logout_user()
+        
+        flash("Account has been deleted", "info")
+        return redirect(url_for("login"))    
+    else:
+        flash("Unauthorized activity", "danger")
+        return redirect(url_for("user_dashboard"))
+    
+    
+@app.route("/change_password", methods=["GET", "POST"])
+@login_required
+def change_password():
+    form = ChangePasswordForm()
+
+    if form.validate_on_submit():
+        check_password = bcrypt.check_password_hash(current_user.password, form.current_password.data)
+        
+        if check_password and current_user.is_authenticated:
+            hashed_new_password = bcrypt.generate_password_hash(form.new_password.data, 14).decode("utf-8")        
+            User.query.filter_by(email=current_user.email).update(dict(password=hashed_new_password))
+            db.session.commit()
+            flash("Password has been changed successfully", "success")
+            return redirect(url_for("user_dashboard"))
+        else:
+            flash("Wrong current password", "danger")
+            return redirect(url_for("change_password"))        
+    else:
+        return render_template("change_password.html", form=form)

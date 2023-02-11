@@ -37,23 +37,29 @@
         </form>
     </div>
     <div class="maintenance">
-        <button>Delete
-            <a href=""></a>
-        </button>
+        <div>
+            <p>Delete account</p>
+            <button>
+                <a href="{{ url_for('delete_account', email=current_user.email) }}">Delete</a>
+            </button>
+        </div>
 
-        <button>Update
-            <a href=""></a>
-        </button>
+        <div>
+            <p>Change password</p>
+            <button>
+                <a href="{{ url_for('change_password') }}">Change</a>
+            </button>
+        </div>
 
-        <button>Update
-            <a href=""></a>
-        </button>
+
+        <div>
+            <form method=post enctype="multipart/form-data">
+                {{ pic_form.pic_file }}
+                {{ pic_form.update }}
+            </form>
+        </div>
     </div>
 </div>
-
-
-
-
 {% endblock content %}
 
 {% endif %}

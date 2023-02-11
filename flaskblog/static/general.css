@@ -11,7 +11,7 @@ body {
 
 
 
-/* ----------------------------- Posts on Home Page ----------------------------- */
+/* --------------------------- Posts on Home Page --------------------------- */
 
 .home-page-container {
     display: flex;
@@ -52,18 +52,23 @@ body {
 }
 
 .post-title button {
-    width: 50px;
-    margin-right: 3px;
-    padding: 3px;
+    width: 52px;
+    padding: 5px;
     border: none;
 }
 
+.edit:active,
+.delete:active {
+    transform: scale(0.9);
+}
+
 .edit {
-    background-color: deepskyblue;
+    background-color: dodgerblue;
+    margin-right: 4px;
 }
 
 .delete {
-    background-color: red;
+    background-color: rgb(238, 75, 75);
 }
 
 .post-content {
@@ -78,7 +83,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 3px;
+    padding-top: 4px;
     margin-bottom: 15px;
 }
 
@@ -95,4 +100,8 @@ body {
     width: 120px;
     margin-bottom: 15px;
     padding: 7px;
+}
+
+.maintenance button {
+    display: block;
 }
