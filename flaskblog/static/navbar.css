@@ -106,6 +106,7 @@ nav a {
 .flash-msgs-container {
     margin-top: 65px;
     height: 45px;
+    margin-bottom: 5px;
 }
 
 .flash-msg-success,
@@ -118,6 +119,7 @@ nav a {
     margin: auto;
     position: relative;
     display: flex;
+    width: 100%;
 }
 
 .flash-msg-success {

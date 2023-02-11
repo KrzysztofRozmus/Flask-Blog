@@ -25,19 +25,29 @@
     {% include "navbar.html" %}
 
     {% for post in posts %}
-    <div class="post-container">
-
-        <div class="post-title">
-            <h1>{{ post.title }}</h1>
+    <div class="home-page-container">
+        <div class="post-pic-container">
+            <img class="post-picture" src="{{ image_file }}" alt="">
+            <p class="posts">Posts: 23</p>
         </div>
+        <div class="post-container">
 
-        <div class="post-author-and-date">
-            <small>Author: {{ post.author.username }}</small>
-            <small class="post-date">{{ post.date_posted }}</small>
-        </div>
+            <div class="post-title">
+                <h1>{{ post.title }}</h1>
+                <div>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
 
-        <div class="post-content">
-            {{ post.content }}
+            <div class="post-author-and-date">
+                <small>Author: {{ post.author.username }}</small>
+                <small class="post-date">{{ post.date_posted }}</small>
+            </div>
+
+            <div class="post-content">
+                {{ post.content }}
+            </div>
         </div>
     </div>
     {% endfor %}

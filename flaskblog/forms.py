@@ -50,6 +50,6 @@ class LoginForm(FlaskForm):
 # ---------------------------------------------------------------------------------------------------------------------
 
 class PostForm(FlaskForm):
-    title = StringField("Title", validators=[DataRequired(), Length(max=25)])
+    title = StringField("Title", validators=[DataRequired(), Length(max=80)])
     content = StringField("Content", validators=[DataRequired()], widget=TextArea())
     submit = SubmitField("Add Post")

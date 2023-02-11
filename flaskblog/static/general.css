@@ -12,22 +12,58 @@ body {
 
 
 /* ----------------------------- Posts on Home Page ----------------------------- */
+
+.home-page-container {
+    display: flex;
+    height: 205px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.post-pic-container {
+    height: 205px;
+    background-color: white;
+}
+
+.post-pic-container p {
+    text-align: center;
+    font-size: 14px;
+}
+
 .post-container {
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);  
     background-color: white;
     margin-bottom: 30px;
     padding: 10px;
-    height: 200px;  
+    height: 205px;
+    width: 100%;
 }
 
 .post-title {
     font-weight: 700;
-    margin-bottom: 9px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .post-title h1 {
-    font-size: 25px;
+    font-size: 20px;
     padding: 0;
+    display: inline-block;
+}
+
+.post-title button {
+    width: 50px;
+    margin-right: 3px;
+    padding: 3px;
+    border: none;
+}
+
+.edit {
+    background-color: deepskyblue;
+}
+
+.delete {
+    background-color: red;
 }
 
 .post-content {
@@ -55,8 +91,8 @@ body {
     margin-top: 20px;
 }
 
-.post-title {
-    height: 30px;
-    width: 700px;
-    font-size: 20px;
+.post-picture {
+    width: 120px;
+    margin-bottom: 15px;
+    padding: 7px;
 }
